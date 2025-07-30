@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from .models import Movie
 
 def home(request):
-    context = {'name': 'Matias Martinez Moreno'}  # Diccionario con el dato a pasar
-    return render(request, 'home.html', context)  # Enviamos context a la plantilla
+    searchTerm = request.GET.get('searchMovie')
+    if searchTerm:
+        movies = Movie.objects.filter(title__icontains=searchTerm)
+    else:
+        movies = Movie.objects.all()
+    
+    return render(request, 'home.html', {'name': 'Matías Martínez', 'movies': movies})
 
 def about(request):
-    context = {'name': 'Matías Martínez'}
-    return render(request, 'about.html', context)
+    return render(request, 'about.html')
