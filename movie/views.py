@@ -7,4 +7,5 @@ def home(request):
     return render(request, 'home.html', context)  # Enviamos context a la plantilla
 
 def about(request):
-    return HttpResponse("This is the About Page")
+    context = {'name': 'Matías Martínez'}
+    return render(request, 'about.html', context)
