@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def home(request):
-    context = {'name': 'matias martinez'}  # Diccionario con el dato a pasar
+    context = {'name': 'Matias Martinez Moreno'}  # Diccionario con el dato a pasar
     return render(request, 'home.html', context)  # Enviamos context a la plantilla
 
 def about(request):
