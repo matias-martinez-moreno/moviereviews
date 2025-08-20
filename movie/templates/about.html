@@ -1,2 +1,45 @@
-<h1>This is the About Page</h1>
-<p>Welcome, {{ name }}!</p>
+{% extends 'base.html' %}
+
+{% block title %}About - Movie Reviews{% endblock %}
+
+{% block content %}
+<!-- Título de página con estilo mejorado -->
+<div class="page-title">
+  <div class="container">
+    <h1 class="text-center">
+      <i class="bi bi-info-circle me-3"></i>About This Website
+    </h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg" style="border-radius: 20px; border: none;">
+        <div class="card-body p-5 text-center">
+          <div class="mb-4">
+            <i class="bi bi-film text-primary" style="font-size: 4rem;"></i>
+          </div>
+          <h3 class="card-title mb-4" style="color: #2c3e50; font-weight: 700;">
+            Movie Reviews Platform
+          </h3>
+          <p class="card-text lead" style="color: #5a6c7d; font-size: 1.1rem;">
+            This is a comprehensive movie catalog and review platform that allows users to explore, search, and discover movies from different genres and years.
+          </p>
+          <div class="mt-4">
+            <span class="badge bg-primary me-2" style="font-size: 0.9rem;">
+              <i class="bi bi-search me-1"></i>Search Movies
+            </span>
+            <span class="badge bg-success me-2" style="font-size: 0.9rem;">
+              <i class="bi bi-funnel me-1"></i>Filter by Genre
+            </span>
+            <span class="badge bg-warning" style="font-size: 0.9rem;">
+              <i class="bi bi-calendar me-1"></i>Filter by Year
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

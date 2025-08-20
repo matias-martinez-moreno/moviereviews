@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}News - Movie Reviews{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .card {
+        border: none;
+        border-radius: 15px;
+        background: white;
+    }
+    .news-icon {
+        background: linear-gradient(135deg, #ffc107 0%, #ffdb4d 100%);
+    }
+    .card-title {
+        color: #495057;
+        font-weight: 600;
+    }
+    .card-text {
+        color: #6c757d;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Título de página con estilo mejorado -->
+<div class="page-title">
+  <div class="container">
+    <h1 class="text-center">
+      <i class="bi bi-newspaper me-3"></i>Latest News
+    </h1>
+  </div>
+</div>
+
+<div class="container">
+  
+  {% if news_list %}
+      <div class="row g-0">
+          {% for news in news_list %}
+              <div class="col-12 mb-3">
+                  <div class="card mb-3" style="max-width: 100%;">
+                      <div class="row g-0">
+                          <div class="col-md-4">
+                              <div class="d-flex align-items-center justify-content-center h-100 news-icon" style="min-height: 200px;">
+                                  <i class="bi bi-newspaper" style="font-size: 4rem; color: #6c757d;"></i>
+                              </div>
+                          </div>
+                          <div class="col-md-8">
+                              <div class="card-body">
+                                  <h5 class="card-title">{{ news.headline }}</h5>
+                                  <p class="card-text">{{ news.body }}</p>
+                                                                     <p class="card-text">
+                                       <small class="text-muted">
+                                           <i class="bi bi-calendar3"></i> Last updated: {{ news.date }}
+                                       </small>
+                                   </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
+             </div>
+     {% else %}
+               <div class="alert alert-info text-center">
+          <i class="bi bi-exclamation-circle"></i> No news available.
+        </div>
+     {% endif %}
+   </div>
+ </div>
+{% endblock %}

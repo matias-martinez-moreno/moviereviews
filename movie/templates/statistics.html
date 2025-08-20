@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Statistics - Movie Reviews{% endblock %}
+
+{% block content %}
+<!-- Título de página con estilo mejorado -->
+<div class="page-title">
+  <div class="container">
+    <h1 class="text-center">
+      <i class="bi bi-bar-chart me-3"></i>Movie Statistics
+    </h1>
+  </div>
+</div>
+
+<div class="container">
+  
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card shadow-lg" style="border-radius: 20px; border: none;">
+        <div class="card-body p-4">
+                                 <h5 class="card-title text-center mb-4" style="color: #495057; font-weight: 600;">
+              <i class="bi bi-bar-chart text-warning me-2"></i>Movie Statistics
+            </h5>
+          {% if graphic %}
+            <div class="text-center">
+              <img src="data:image/png;base64,{{ graphic }}" alt="Gráfica de películas por año" class="img-fluid" style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            </div>
+          {% else %}
+                         <div class="alert alert-warning text-center" style="background: linear-gradient(45deg, #ffc107, #ffdb4d); border: none; color: #495057;">
+               <i class="bi bi-exclamation-circle"></i> No data available to generate the chart.
+             </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

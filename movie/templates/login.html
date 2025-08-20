@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - Movie Reviews{% endblock %}
+
+{% block content %}
+<!-- Título de página con estilo mejorado -->
+<div class="page-title">
+  <div class="container">
+    <h1 class="text-center">
+      <i class="bi bi-box-arrow-in-right me-3"></i>Login
+    </h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-lg" style="border-radius: 20px; border: none;">
+        <div class="card-body p-5 text-center">
+          <div class="mb-4">
+            <i class="bi bi-person-circle text-primary" style="font-size: 4rem;"></i>
+          </div>
+          <h3 class="card-title mb-4" style="color: #2c3e50; font-weight: 700;">
+            Iniciar Sesión
+          </h3>
+          <p class="card-text mb-4" style="color: #5a6c7d;">
+            Aquí podrías loguearte con tu cuenta
+          </p>
+          
+          <!-- Formulario de login simulado -->
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label text-start d-block" style="color: #495057; font-weight: 600;">
+                <i class="bi bi-envelope me-2"></i>Email
+              </label>
+              <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label text-start d-block" style="color: #495057; font-weight: 600;">
+                <i class="bi bi-lock me-2"></i>Contraseña
+              </label>
+              <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3">
+              <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar Sesión
+            </button>
+            <div class="form-check text-start">
+              <input class="form-check-input" type="checkbox" id="remember">
+              <label class="form-check-label" for="remember" style="color: #6c757d;">
+                Recordarme
+              </label>
+            </div>
+          </form>
+          
+          <hr class="my-4">
+          <p class="mb-0" style="color: #6c757d; font-size: 0.9rem;">
+            <i class="bi bi-info-circle me-1"></i>
+            Esta es una página de demostración
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
